@@ -1,0 +1,39 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">Kosár</div>
+        <div class="card-text">
+           <p *ngIf="osszesen()!=0; else ures">{{osszesen()}} Ft</p>
+           <ng-template #ures><p>A kosár üres.</p></ng-template>
+        </div>
+      
+    </div>
+    <div class="card-footer">
+        <button (click)="elkuld()" class="ms-1 btn btn-primary"  type="button" id="button-addon2">Bevásárlás elküldése</button>
+    </div>
+  </div>
+
+<div class="row">
+    <div *ngFor="let tetel of tetelek" class="col-12">
+        
+            <div class="card h-100">
+
+              <div class="card-body">
+                <button type="button" (click)="deleteTetel(tetel)" class="btn-close position-absolute top-0 end-0" aria-label="Close"></button>
+                <div class="row">
+                    <div class="col-6">
+                        <img [src]="tetel.aru.kep" class="img-thumbnail" alt="Áru">
+                    </div>
+                    <div class="col-6">
+                        <h6>{{tetel.aru.leiras}}</h6>
+                        <p>{{tetel.mennyiseg}} {{tetel.aru.mennyiseg}}</p>
+                        <p>{{ar(tetel.aru.ar,tetel.mennyiseg)}} Ft</p>
+                    </div>
+                </div>
+                
+              </div>
+              <div class="card-footer">
+              </div>
+            </div>
+        
+    </div>
+</div>

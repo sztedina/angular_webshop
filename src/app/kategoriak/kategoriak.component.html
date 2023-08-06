@@ -1,0 +1,4 @@
+<!-- {{kategoriak}} -->
+<ul class="list-group" *ngFor="let kategoria of kategoriak; index as i">
+    <li class="list-group-item" (click)="click(i, kategoria)" [ngClass]="{'active':isSelected(i)}" aria-current="true">{{kategoria}}</li>
+  </ul>

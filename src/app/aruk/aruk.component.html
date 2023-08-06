@@ -1,0 +1,33 @@
+
+<div class="row">
+ 
+    <div *ngFor="let aru of aruk" class="col-12 col-md-6 col-lg-4 col-xl-3">
+      
+            <div class="card h-100">
+              <img [src]="aru.kep" class="card-img-top" alt="Áru">
+              <div class="card-body">
+                <h5 class="card-title">{{aru.leiras}}</h5>
+                <p class="card-text">
+                    {{aru.ar}} Ft/{{aru.mennyiseg}}
+                </p>
+              </div>
+              <div class="card-footer">
+                <div *ngIf="aru.mennyiseg!='kg'; else db" class="input-group mb-3">
+                    <input #mennyiseg type="number" min="1" value="1" class="form-control">
+                    <button (click)="addTetel(aru, mennyiseg.value)" class="ms-1 btn btn-primary"  type="button" id="button-addon2">Hozzáad</button>
+                </div>
+                <ng-template #db>
+                    <div  class="input-group mb-3">
+                        <select #mennyiseg class="form-select" id="inputGroupSelect02">
+                            <option value="0.1"  selected>0.1</option>
+                            <option *ngFor="let s of suly" [value]="s">{{s}}</option>
+                          </select>
+                        <button (click)="addTetel(aru, mennyiseg.value)" class="ms-1 btn btn-primary"  type="button" id="button-addon2">Hozzáad</button>
+                    </div>
+                </ng-template>
+              </div>
+          </div>
+      
+    </div>
+ 
+</div>
