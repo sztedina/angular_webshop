@@ -15,6 +15,7 @@ src/app/enviroments.ts
 /src/app/enviroments.ts
 ./src/app/enviroments.ts
 
+
 # IDEs and editors
 .idea/
 .project
@@ -40,6 +41,11 @@ src/app/enviroments.ts
 /libpeerconnection.log
 testem.log
 /typings
+
+/functions/webshop-1236e-firebase-adminsdk-v5prh-0d8d4cc417.json
+/functions/node_modules
+.firebase
+
 
 # System files
 .DS_Store
